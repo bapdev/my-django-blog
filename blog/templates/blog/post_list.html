@@ -9,23 +9,13 @@
   <div>
     <h1><a href="">My Django Blog</a></h1>
   </div>
-
+{% for post in posts %}
   <div>
-    <p>published: 14.06.2015</p>
-    <h2><a href="">My First Post</a></h2>
-    <p>
-      I seek the means to fight injustice.
-      To turn fear against those who prey on the fearful.
-    </p>
+    <p>published: {{ post.published_date }}</p>
+    <h1><a href="">{{ post.title }}</a></h1>
+    <p>{{ post.text|linebreaks }}</p>
   </div>
+{% endfor %}
 
-  <div>
-    <p>published: 14.06.2015</p>
-    <h2><a href="">My Second Post</a></h2>
-    <p>
-      I seek the means to fight injustice.
-      To turn fear against those who prey on the fearful.
-    </p>
-  </div>
 </body>
 </html>
